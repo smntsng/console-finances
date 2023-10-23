@@ -88,8 +88,7 @@ var finances = [
 ];
 
 // Heading 
-console.log("Financial Analysis");
-console.log("----------------");
+console.log("Financial Analysis \n ----------------");
 // The total number of months included in the dataset.
 console.log("Total Months:" + finances.length);
 
@@ -153,3 +152,5 @@ for (let i = 1; i < finances.length; i++) {
 }
 
 console.log("Greatest Decrease in Profit/Losses: " + greatestDecrease.date + " $-" + greatestDecrease.amount);
+
+
