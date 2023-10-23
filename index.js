@@ -97,3 +97,42 @@ console.log("Total Months:" + finances.length);
 var netTotal = finances.reduce((acc, entry) => acc + entry[1], 0);
 
 console.log("Total: $" + netTotal);
+
+// The average of the changes in Profit/Losses over the entire period.
+
+var previousMonthProfit = finances[0][1]; 
+var totalChange = 0;
+
+for (var i = 1; i < finances.length; i++) {
+  var currentMonthProfit = finances[i][1];
+  var change = currentMonthProfit - previousMonthProfit;
+  totalChange += change;
+  previousMonthProfit = currentMonthProfit;
+}
+
+var averageChange = totalChange / (finances.length - 1);
+var roundedAverageChange = averageChange.toFixed(2);
+
+console.log("Average Change:", roundedAverageChange);
+
+// The greatest increase in Profit/Losses (date and amount) over the entire period.
+var greatestIncrease = {
+date: "",
+  amount: 0,
+};
+
+for (let i = 1; i < finances.length; i++) {
+  const currentDate = finances[i][0];
+  const currentProfit = finances[i][1];
+  const previousProfit = finances[i - 1][1];
+
+  const increase = currentProfit - previousProfit;
+
+  if (increase > greatestIncrease.amount) {
+    greatestIncrease.date = currentDate;
+    greatestIncrease.amount = increase;
+  }
+}
+
+
+console.log("Greatest Increase in Profits/Losses: " + greatestIncrease.date +" $" +  greatestIncrease.amount);
