@@ -13,7 +13,7 @@ I have created code for analyzing the financial records of a company using the f
 5. The greatest decrease in Profit/Losses (date and amount) over the entire period.
 
 
-![ALT](/Assets/Images/Screenshot 2023-10-23 163000.jpg)
+![ALT](Assets/Images/Screenshot.jpg)
 
 ## Installation
 N/A
